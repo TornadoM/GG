@@ -20,12 +20,28 @@ public class LookAndFeel extends JFrame{
 		for(Component component:samples)
 			add(component);
 	}
-	private static void UsageError(){
-		System.out.println("Usage: LookAndFeel [cross]");
+	private static void usageError(){
+		System.out.println("Usage: LookAndFeel [cross|System|motif]");
+		System.exit(1);
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		if(args.length==0) usageError();
+		if(args[0].equals("cross")){
+			try{
+				UIManager.setLookAndFeel(
+						UIManager.getCrossPlatformLookAndFeelClassName());
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}else if(args[0].equals("system")){
+			try{
+				UIManager.setLookAndFeel("com.sun.java."+
+			"swing.plaf.motif.MotifLookAndFeel");
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}else usageError();
+		run(new LookAndFeel(),300,300);
 	}
-
 }
