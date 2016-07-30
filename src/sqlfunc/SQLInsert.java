@@ -10,7 +10,7 @@ public class SQLInsert {
 		Class.forName("org.sqlite.JDBC");
 		Connection conn=null;
 		try{
-			conn=DriverManager.getConnection("jdbc:sqlite:D:/gg/FA.db");
+			conn=DriverManager.getConnection("jdbc:sqlite:D:/JavaWork/FA.db");
 			Statement stm=conn.createStatement();
 			
 			ItemInput iteminput=new ItemInput();			
@@ -29,7 +29,10 @@ public class SQLInsert {
 			stm.executeUpdate("insert into Item values("+item_ID+",'"+iteminput.getUser()+"','"
 			+iteminput.getTimestamp()+"',"+fzd_ID+","+kp_ID+","+lkulm_ID+","+absg_ID+","+bandgsw_ID+
 			","+kum_ID+",'"+iteminput.getConfiguration()+"')");
-			//stm.executeUpdate("insert into Fahrzeugdaten values("+fzdinput.getKunde()+fzdinput.getModell())")
+			stm.executeUpdate("insert into Fahrzeugdaten values("+fzd_ID+",'"+fzdinput.getKunde()+"','"+
+			fzdinput.getModell()+"','"+fzdinput.getTyp()+"','"+fzdinput.getMassstab()+"','"+fzdinput.getStirnflache()+
+			"','"+fzdinput.getRadstand()+"','"+fzdinput.getSpurweite1()+"','"+fzdinput.getSpurweite2()+"','"+fzdinput.getShiftX()+
+			"','"+fzdinput.getShiftY()+"','"+fzdinput.getShiftZ()+"')");
 		}catch(SQLException e){
 			System.err.println(e.getMessage());
 			System.exit(0);

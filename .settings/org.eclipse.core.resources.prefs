@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/ivk/Panel_Add.java=UTF-8
 encoding//src/sqlfunc/FZDInput.java=UTF-8
 encoding//src/sqlfunc/InputInfo.java=UTF-8
 encoding//src/sqlfunc/ItemInput.java=UTF-8
 encoding//src/sqlfunc/SQLInsert.java=UTF-8
+encoding//src/sqlfunc/SQLSearch.java=UTF-8
 encoding//src/test/Test.java=UTF-8

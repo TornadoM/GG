@@ -33,7 +33,7 @@ public class ItemInput {
 		new InputInfo("User Name","Qiaoxing Dong");
 		user=sc.nextLine();
 		Date date=new Date();
-		DateFormat format=new SimpleDateFormat("yyyy-mm-dd hh:mm");
+		DateFormat format=new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		timestamp=format.format(date);
 		new InputInfo("Configuration");
 		configuration=sc.nextLine();
